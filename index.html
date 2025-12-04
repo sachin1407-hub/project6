@@ -1,0 +1,316 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Photography Portfolio</title> 
+    <style> 
+        /* Basic reset */ 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        } 
+ 
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f5f5f5; 
+            color: #333; 
+            line-height: 1.6; 
+        } 
+ 
+        header { 
+            background-color: #111; 
+            color: red; 
+            padding: 20px 0; 
+            text-align: center; 
+        } 
+ 
+        header h1 { 
+            margin-bottom: 5px; 
+            font-size: 32px; 
+        } 
+ 
+        header p { 
+            font-size: 14px; 
+            color: #ccc; 
+        } 
+ 
+        nav { 
+            background-color: #222; 
+            text-align: center; 
+            padding: 10px 0; 
+        } 
+ 
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            margin: 0 15px; 
+            font-size: 14px; 
+        } 
+ 
+        nav a:hover { 
+            text-decoration: underline; 
+        } 
+ 
+        .container { 
+            width: 90%; 
+            max-width: 1000px; 
+            margin: 20px auto; 
+        } 
+ 
+        /* Hero section */ 
+        .hero { 
+            background-color: #000; 
+            color: wheat; 
+            padding: 30px 20px; 
+            text-align: center; 
+            border-radius: 4px; 
+        } 
+ 
+        .hero h2 { 
+            font-size: 26px; 
+            margin-bottom: 10px; 
+        } 
+ 
+        .hero p { 
+            font-size: 14px; 
+            margin-bottom: 15px; 
+        } 
+ 
+        .hero button { 
+            padding: 10px 20px; 
+            border: none; 
+            background-color: wheat; 
+            color: blueviolet; 
+            cursor: pointer; 
+            font-size: 14px; 
+            border-radius: 3px; 
+        } 
+ 
+        .hero button:hover { 
+            opacity: 0.9; 
+        } 
+ 
+        /* Section titles */ 
+        h2.section-title { 
+            margin: 30px 0 10px; 
+            font-size: 22px; 
+            border-left: 4px solid blueviolet; 
+            padding-left: 10px; 
+        } 
+ 
+        /* Gallery */ 
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
+            gap: 15px; 
+            margin-top: 10px; 
+        } 
+ 
+        .photo-card { 
+            background-color: blueviolet; 
+            border-radius: 4px; 
+            overflow: hidden; 
+            box-shadow: 0 0 5px rgba(0,0,0,0.1); 
+        } 
+ 
+        .photo-card img { 
+            width: 100%; 
+            display: block; 
+            height: 180px; 
+            object-fit: cover; 
+        } 
+ 
+        .photo-card .caption { 
+            padding: 8px 10px; 
+            font-size: 13px; 
+            text-align: center; 
+        } 
+ 
+        /* About section */ 
+        .about { 
+            background-color: wheat; 
+            padding: 15px; 
+            border-radius: 4px; 
+            box-shadow: 0 0 5px rgba(0,0,0,0.1); 
+            font-size: 14px; 
+        } 
+ 
+        /* Booking form */ 
+        .booking-form { 
+            background-color: wheat; 
+            padding: 15px; 
+            border-radius: 4px; 
+            box-shadow: 0 0 5px rgba(0,0,0,0.1); 
+            font-size: 14px; 
+        } 
+ 
+        .booking-form label { 
+            display: block; 
+            margin-bottom: 4px; 
+            font-weight: bold; 
+        } 
+ 
+        .booking-form input, 
+        .booking-form select, 
+        .booking-form textarea { 
+            width: 100%; 
+            padding: 8px; 
+            margin-bottom: 12px; 
+            border: 1px solid #ccc; 
+            border-radius: 3px; 
+            font-size: 13px; 
+        } 
+ 
+        .booking-form button { 
+            padding: 10px 20px; 
+            border: none; 
+            background-color: #111; 
+            color: wheat; 
+            cursor: pointer; 
+            font-size: 14px; 
+            border-radius: 3px; 
+        } 
+ 
+        .booking-form button:hover { 
+            background-color: #333; 
+        } 
+ 
+        footer { 
+            text-align: center; 
+            padding: 15px 0; 
+            background-color: #111; 
+            color: #ccc; 
+            font-size: 12px; 
+            margin-top: 30px; 
+        } 
+ 
+        /* Small screens */ 
+        @media (max-width: 600px) { 
+            .hero h2 { 
+                font-size: 22px; 
+            } 
+        } 
+    </style> 
+</head> 
+<body> 
+ 
+    <header> 
+        <h1> Sachin's Photography</h1> 
+        <p>Capturing moments, telling stories.</p> 
+    </header> 
+ 
+    <nav> 
+        <a href="#portfolio">Portfolio</a> 
+        <a href="#about">About</a> 
+        <a href="#book">Book a Session</a> 
+    </nav> 
+ 
+    <div class="container"> 
+        <!-- Hero --> 
+        <section class="hero"> 
+            <h2>Welcome to My Portfolio</h2> 
+            <p>Explore my favorite shots from weddings, portraits, nature and more. Let’s create something 
+beautiful together.</p> 
+            <button onclick="document.getElementById('book').scrollIntoView()">Book a Session</button> 
+        </section> 
+ 
+        <!-- Portfolio / Categories --> 
+        <h2 class="section-title" id="portfolio">Photography Categories</h2> 
+ 
+        <div class="gallery-grid"> 
+            <!-- Weddings --> 
+            <div class="photo-card"> 
+                <img src="https://images.pexels.com/photos/265722/pexels-photo-265722.jpeg" alt="Wedding 
+Photography"> 
+                <div class="caption"> 
+                    <strong>Weddings</strong><br> 
+                    Emotional and timeless wedding moments. 
+                </div> 
+            </div> 
+ 
+            <!-- Portraits --> 
+            <div class="photo-card"> 
+                <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg" alt="Portrait 
+Photography"> 
+                <div class="caption"> 
+                    <strong>Portraits</strong><br> 
+                    Clean, simple and expressive portraits. 
+                </div> 
+            </div> 
+ 
+            <!-- Nature --> 
+            <div class="photo-card"> 
+                <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg" alt="Nature 
+Photography"> 
+                <div class="caption"> 
+                    <strong>Nature</strong><br> 
+                    Landscapes, skies, and natural beauty. 
+                </div> 
+            </div> 
+ 
+            <!-- Street --> 
+            <div class="photo-card"> 
+                <img src="https://images.pexels.com/photos/442559/pexels-photo-442559.jpeg" alt="Street 
+Photography"> 
+                <div class="caption"> 
+                    <strong>Street</strong><br> 
+                    Real-life scenes and city stories. 
+                </div> 
+            </div> 
+        </div> 
+ 
+        <!-- About --> 
+        <h2 class="section-title" id="about">About Me</h2> 
+        <section class="about"> 
+            <p> 
+                Hi, I’m <strong>Rudra</strong>, a freelance photographer who loves capturing real, candid 
+moments. 
+                I enjoy working with natural light and simple backgrounds to keep the focus on you and your story. 
+            </p> 
+            <p> 
+                I’m available for weddings, couple shoots, portraits, events and more.   
+                Based in your city, but happy to travel for special projects. 
+            </p> 
+        </section> 
+ 
+        <!-- Booking Form --> 
+        <h2 class="section-title" id="book">Book a Session</h2> 
+        <section class="booking-form"> 
+            <form> 
+                <label for="name">Your Name</label> 
+                <input type="text" id="name" placeholder="Enter your full name"> 
+ 
+                <label for="email">Email</label> 
+                <input type="email" id="email" placeholder="Enter your email"> 
+ 
+                <label for="phone">Phone</label> 
+                <input type="tel" id="phone" placeholder="Enter your phone number"> 
+ 
+                <label for="type">Type of Session</label> 
+                <select id="type"> 
+                    <option value="">-- Select --</option> 
+                    <option>Wedding</option> 
+                    <option>Portrait</option> 
+                    <option>Couple Shoot</option> 
+                    <option>Event</option> 
+                    <option>Other</option> 
+                </select> 
+ 
+                <label for="date">Preferred Date</label> 
+                <input type="date" id="date"> 
+ 
+                <label for="message">Message / Details</label> 
+                <textarea id="message" rows="4" placeholder="Tell me more about your session..."></textarea> 
+ 
+                <button type="submit">Submit Request</button> 
+            </form> 
+        </section> 
+    </div> 
+ 
+    <footer> 
+        &copy; 2025 Sachin’s Photography &bull; All Rights Reserved 
+    </footer> 
+ 
+</body> 
+</html> 
